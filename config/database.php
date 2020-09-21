@@ -1,6 +1,7 @@
 <?php
 
-$DATABASE_URL = parse_url('postgres://ajmufqlenoyypp:c2b03c67e6c246af4a167e88c28e52fa28de78513932239c738527042450dd40@ec2-54-160-202-3.compute-1.amazonaws.com:5432/db8nf25mno8q6k');
+// $DATABASE_URL = parse_url('postgres://ajmufqlenoyypp:c2b03c67e6c246af4a167e88c28e52fa28de78513932239c738527042450dd40@ec2-54-160-202-3.compute-1.amazonaws.com:5432/db8nf25mno8q6k');
+$DATABASE_URL = parse_url('mysql://u9076763_indra:ndra12345@srv66.niagahoster.com:3306/u9076763_asset_dafam');
 
 /*
  |--------------------------------------------------------------------------
@@ -71,11 +72,19 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'port'      => env('DB_PORT', '3306'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+
+            'host'     => $DATABASE_URL['host'],
+            'port'     => $DATABASE_URL['port'],
+            'database' => ltrim($DATABASE_URL['path'], '/'),
+            'username' => $DATABASE_URL['user'],
+            'password' => $DATABASE_URL['pass'],
+
+            // 'host'      => env('DB_HOST', 'localhost'),
+            // 'port'      => env('DB_PORT', '3306'),
+            // 'database'  => env('DB_DATABASE', 'forge'),
+            // 'username'  => env('DB_USERNAME', 'forge'),
+            // 'password'  => env('DB_PASSWORD', ''),
+
             'charset'   => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
             'prefix'    => env('DB_PREFIX', null),
