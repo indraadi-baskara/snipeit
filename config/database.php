@@ -76,17 +76,11 @@ return [
             // 'username' => $DATABASE_URL['user'],
             // 'password' => $DATABASE_URL['pass'],
 
-            'host'     => 'srv66.niagahoster.com',
-            'port'     => '3306',
-            'database' => 'u9076763_asset_dafam',
-            'username' => 'u9076763_indra',
-            'password' => 'indra12345',
-
-            // 'host'      => env('DB_HOST', 'localhost'),
-            // 'port'      => env('DB_PORT', '3306'),
-            // 'database'  => env('DB_DATABASE', 'forge'),
-            // 'username'  => env('DB_USERNAME', 'forge'),
-            // 'password'  => env('DB_PASSWORD', ''),
+            'host'      => env('DB_HOST', 'localhost'),
+            'port'      => env('DB_PORT', '3306'),
+            'database'  => env('DB_DATABASE', 'forge'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
 
             'charset'   => env('DB_CHARSET', 'utf8mb4'),
             'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
