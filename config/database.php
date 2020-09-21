@@ -38,7 +38,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -73,11 +73,17 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
 
-            'host'     => $DATABASE_URL['host'],
-            'port'     => $DATABASE_URL['port'],
-            'database' => ltrim($DATABASE_URL['path'], '/'),
-            'username' => $DATABASE_URL['user'],
-            'password' => $DATABASE_URL['pass'],
+            // 'host'     => $DATABASE_URL['host'],
+            // 'port'     => $DATABASE_URL['port'],
+            // 'database' => ltrim($DATABASE_URL['path'], '/'),
+            // 'username' => $DATABASE_URL['user'],
+            // 'password' => $DATABASE_URL['pass'],
+
+            'host'     => 'srv66.niagahoster.com',
+            'port'     => '3306',
+            'database' => 'u9076763_asset_dafam',
+            'username' => 'u9076763_indra',
+            'password' => 'indra12345',
 
             // 'host'      => env('DB_HOST', 'localhost'),
             // 'port'      => env('DB_PORT', '3306'),
